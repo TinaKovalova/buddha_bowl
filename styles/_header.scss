@@ -1,0 +1,115 @@
+.header {
+    background-color: $greenColor;
+    color: beige;
+    line-height: 1.44;
+    letter-spacing: toRem(-0.16);
+    padding-block: toRem(20);
+
+    // .header__container-max
+
+    &__container-max {
+        display: flex;
+        align-items: center;
+        column-gap: toRem(24);
+        @media (min-width: $mobile) {
+            padding-inline: toRem(40);
+        }
+    }
+
+    // .header__menu
+
+    &__menu {
+        flex-grow: 1;
+        display: flex;
+        gap: toRem(15) toRem(24);
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+.navigation {
+    // .navigation__list
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: toRem(15) toRem(24);
+    }
+
+    // .navigation__item
+
+    &__item {
+    }
+
+    // .navigation__link
+
+    &__link {
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 0;
+            height: toRem(1);
+            background-color: $beigeColor;
+            transition: width 0.4s;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.burger-btn {
+    flex-shrink: 0;
+    display: none;
+    width: toRem(20);
+    height: toRem(20);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    row-gap: toRem(3);
+    position: relative;
+    &::before,
+    &::after,
+    span {
+        content: "";
+        height: toRem(3);
+        width: 100%;
+        background-color: $beigeColor;
+        border-radius: toRem(5);
+        transform-origin: center;
+    }
+    &.active {
+        align-items: center;
+        gap: 0;
+        span {
+            width: 0;
+            display: none;
+        }
+        &::before,
+        &::after {
+            position: absolute;
+            right: 0;
+        }
+        &::before {
+            transform: rotate(45deg);
+        }
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+    @media (max-width: $mobile) {
+        display: flex;
+    }
+}
+.logo {
+    width: toRem(186);
+    height: toRem(45);
+    flex-shrink: 0;
+}

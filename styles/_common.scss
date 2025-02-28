@@ -1,0 +1,24 @@
+.button {
+    color: $greenColor;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    letter-spacing: toRem(-0.32);
+    line-height: 1.2;
+    flex-shrink: 0;
+    padding-inline: toRem(15);
+    padding-block: toRem(10);
+    border-radius: toRem(10);
+    background-color: beige;
+    box-shadow: 0 0 toRem(3) transparent;
+    transition:
+        background-color 0.4s,
+        color 0.4s,
+        box-shadow 0.4s;
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: transparent;
+            color: inherit;
+            box-shadow: 0 0 toRem(3) $beigeColor;
+        }
+    }
+}
