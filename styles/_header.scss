@@ -40,6 +40,9 @@
         gap: toRem(15) toRem(24);
         justify-content: flex-end;
         align-items: center;
+        & .button {
+            text-transform: capitalize;
+        }
 
         @media (max-width: $mobile) {
             font-size: toRem(20);
@@ -58,14 +61,27 @@
             &._open {
                 transform: translateY(0);
             }
+            & .header__navigation {
+                @media (max-width: $mobile) {
+                    overflow-y: auto;
+                    width: 100%;
+                }
+                // .navigation__list
+
+                & .navigation__list {
+                    @media (max-width: $mobile) {
+                        flex-direction: column;
+                        align-items: center;
+                        font-size: toRem(26);
+                        row-gap: toRem(32);
+                        padding-block-end: toRem(15);
+                    }
+                }
+            }
         }
     }
 }
 .navigation {
-    @media (max-width: $mobile) {
-        overflow-y: auto;
-        width: 100%;
-    }
     // .navigation__list
 
     &__list {
@@ -73,24 +89,13 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: toRem(15) toRem(24);
-        @media (max-width: $mobile) {
-            flex-direction: column;
-            align-items: center;
-            font-size: toRem(26);
-            row-gap: toRem(32);
-            padding-block-end: toRem(15);
-        }
-    }
-
-    // .navigation__item
-
-    &__item {
     }
 
     // .navigation__link
 
     &__link {
         position: relative;
+        text-transform: capitalize;
         &::after {
             content: "";
             position: absolute;
