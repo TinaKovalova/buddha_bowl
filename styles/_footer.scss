@@ -21,8 +21,10 @@
     // .footer__subscription
 
     &__subscription {
-        // flex-shrink: 0;
         max-width: toRem(382);
+        @media (max-width: $mobile) {
+            max-width: 100%;
+        }
     }
 
     // .footer__subscription-lable

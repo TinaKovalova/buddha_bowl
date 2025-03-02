@@ -408,6 +408,11 @@ body {
 .footer__subscription {
   max-width: 23.875rem;
 }
+@media (max-width: 767.98px) {
+  .footer__subscription {
+    max-width: 100%;
+  }
+}
 .footer__subscription-lable:not(:last-child) {
   margin-bottom: 1.5rem;
 }
