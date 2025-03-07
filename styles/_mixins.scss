@@ -1,3 +1,30 @@
+@mixin hover-underline($bg-color) {
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 0;
+        height: toRem(1);
+        background-color: $bg-color;
+        transition: width 0.4s;
+    }
+    @media (any-hover: hover) {
+        &:hover {
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+    @media (any-hover: none) {
+        &:active {
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
 
 //Percent
 @function toPercent($px, $from: 100) {

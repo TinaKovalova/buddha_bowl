@@ -5,9 +5,12 @@ $containerPadding: 10;
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 $laptop: 1199.98px;
-$tablet: 991.98px;
+// $tablet: 991.98px;
+$tablet: 810px;
 $mobile: 767.98px;
-$smallMobile: 479.98px;
+
+$smallMobile: 430px;
+// $smallMobile: 479.98px;
 
 $greenColor: #1a4d2e;
 $beigeColor: #e8dfca;
