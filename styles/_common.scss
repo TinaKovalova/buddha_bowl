@@ -25,3 +25,21 @@
         }
     }
 }
+.header-block {
+    // .header-block__title
+
+    &__title {
+        font-size: toRem(64);
+        font-weight: 700;
+    }
+
+    // .header-block__text
+    &__title,
+    &__text {
+        text-align: center;
+        text-wrap: balance;
+    }
+    &__text {
+        font-family: "Inter", sans-serif;
+    }
+}
