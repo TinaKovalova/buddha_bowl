@@ -110,9 +110,12 @@
 
     &__collection {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(toRem(242), 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(toRem(340), 1fr));
         gap: toRem(20);
-        @media (min-width: $mobile) and (max-width: $tablet) {
+        @media (max-width: $tablet) {
+            grid-template-columns: repeat(auto-fit, minmax(toRem(242), 1fr));
+        }
+        @media (min-width: $smallMobile) and (max-width: $tablet) {
             gap: toRem(7);
             padding-inline: toRem(25);
         }
@@ -294,5 +297,157 @@
         & > :nth-child(2) {
             display: block;
         }
+    }
+}
+// MENU page---------------------------------------------------
+
+.menu {
+    // .menu__top
+
+    &__top {
+        background-color: $greenColor;
+    }
+    // .menu__container-min
+
+    &__top &__container-min {
+        padding-block: toRem(48);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: toRem(14) toRem(9);
+        @media (max-width: toRem(991.98)) {
+            flex-direction: column;
+        }
+    }
+    // .menu__image-wrapper
+
+    &__image-wrapper {
+        border-radius: toRem(24);
+        overflow: hidden;
+        max-width: toRem(507);
+        max-height: toRem(507);
+
+        @media (max-width: toRem(991.98)) {
+            max-width: toRem(344);
+            max-height: toRem(344);
+        }
+        @media (max-width: toRem(429.98)) {
+            width: toRem(270);
+            height: toRem(270);
+        }
+    }
+    // .menu__image
+
+    &__image {
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        aspect-ratio: 507 / 507;
+    }
+
+    // .menu__header
+
+    &__header {
+        max-width: toPercent(556, $maxWidthContainer);
+        color: $whiteColor;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: toRem(16);
+        @media (max-width: toRem(991.98)) {
+            max-width: toRem(682);
+        }
+        // .header-block__title
+
+        & .header-block__title {
+            color: inherit;
+
+            @media (min-width: $tablet) {
+                font-size: toRem(90);
+                line-height: 1;
+            }
+        }
+
+        // .header-block__text
+
+        & .header-block__text {
+            font-family: "DM Sans", sans-serif;
+            font-size: toRem(26);
+            line-height: 1.38;
+            max-width: toRem(632);
+            @media (max-width: $smallMobile) {
+                font-size: toRem(16);
+                line-height: 1.438;
+                letter-spacing: toRem(-0.16);
+            }
+        }
+    }
+
+    // .menu__bottom
+
+    &__bottom {
+        padding-block: toRem(64) toRem(110);
+        @media (max-width: $tablet) {
+            padding-block-end: toRem(94);
+        }
+        @media (max-width: $smallMobile) {
+            padding-block: toRem(51) toRem(99);
+        }
+    }
+
+    // .menu__sort-list
+
+    &__sort-form {
+        &:not(:last-child) {
+            margin-bottom: toRem(64);
+        }
+    }
+
+    // .menu__collection
+
+    &__collection {
+        @extend .specialties__collection;
+        row-gap: toRem(64);
+
+        @media (max-width: $mobile) {
+            padding-inline: toRem(35);
+        }
+        @media (min-width: $smallMobile) and (max-width: $tablet) {
+            column-gap: toRem(7);
+        }
+        @media (max-width: $smallMobile) {
+            row-gap: toRem(20);
+        }
+    }
+}
+
+.form-sort {
+    padding-inline: toRem(36);
+    display: flex;
+    flex-wrap: wrap;
+    gap: toRem(10) toRem(20);
+    font-size: toRem(26);
+    line-height: 1.384;
+    color: $darkColor;
+    @media (max-width: toRem(429.98)) {
+        padding-inline: toRem(15);
+    }
+    // .form-sort__checkbox
+
+    &__checkbox {
+        position: relative;
+        &:has(:checked) {
+            text-decoration: underline;
+            color: $greenColor;
+        }
+    }
+
+    // .form-sort__input
+
+    &__input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        visibility: hidden;
     }
 }

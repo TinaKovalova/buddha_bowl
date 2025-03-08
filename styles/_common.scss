@@ -10,6 +10,8 @@
     border-radius: toRem(10);
     background-color: beige;
     box-shadow: 0 0 toRem(3) transparent;
+    display: flex;
+    column-gap: toRem(4);
     transition:
         background-color 0.4s,
         color 0.4s,
@@ -17,11 +19,24 @@
     &::first-letter {
         text-transform: capitalize;
     }
+    &.button--icon {
+        &::after {
+            content: "";
+            width: 1.25em;
+            height: 1.25em;
+            background-color: $greenColor;
+            mask: url(../img/icons/arrow.svg) center / contain no-repeat;
+            transition: background-color 0.4s;
+        }
+    }
     @media (any-hover: hover) {
         &:hover {
             background-color: transparent;
             color: inherit;
             box-shadow: 0 0 toRem(3) $beigeColor;
+            &.button--icon::after {
+                background-color: $darkColor;
+            }
         }
     }
 }
@@ -72,10 +87,12 @@
         height: toPercent(308, 340);
         border-radius: toRem(80);
         overflow: hidden;
-
+        & .product-card__image {
+            transition: transform 0.4s;
+        }
         @media (any-hover: hover) {
             &:hover .product-card__image {
-                transform: scale(1.05);
+                transform: scale(1.03);
             }
         }
     }
@@ -112,7 +129,6 @@
         }
     }
 
-    
     // .product-card__text
 
     &__text {
