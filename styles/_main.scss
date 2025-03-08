@@ -24,6 +24,7 @@
         & .header-block__title {
             font-size: toRem(90);
             line-height: 1;
+            color: $whiteColor;
             @media (max-width: $tablet) {
                 font-size: toRem(64);
             }
@@ -68,10 +69,13 @@
     // .specialties__container-min
 
     &__container-min {
-        padding-block: toRem(184) toRem(117);
+        padding-block: toRem(184) toRem(67);
         @media (max-width: $tablet) {
-            padding-block: toRem(154) toRem(113);
+            padding-block: toRem(154) toRem(43);
             margin-top: toRem(-100);
+        }
+        @media (max-width: $tablet) {
+            padding-block-end: toRem(23);
         }
     }
 
@@ -88,8 +92,6 @@
 
         & .header-block__title {
             line-height: 0.93;
-            background: linear-gradient(180deg, #000 0%, #202b13 100%);
-            background-clip: text;
         }
 
         // .header-block__text
@@ -110,8 +112,187 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(toRem(242), 1fr));
         gap: toRem(20);
-        @media (min-width: $smallMobile) and (max-width: $tablet) {
+        @media (min-width: $mobile) and (max-width: $tablet) {
             gap: toRem(7);
+            padding-inline: toRem(25);
+        }
+        @media (max-width: $mobile) {
+            padding-inline: toRem(35);
+        }
+    }
+}
+.location {
+    // .location__container-min
+
+    &__container-min {
+        padding-block: toRem(50) toRem(124);
+        @media (max-width: $tablet) {
+            padding-block-end: toRem(54);
+        }
+        @media (max-width: $mobile) {
+            padding-inline: toRem(24);
+            padding-block-end: toRem(47);
+        }
+    }
+
+    // .location__header
+
+    &__header {
+        &:not(:last-child) {
+            margin-bottom: toRem(64);
+            @media (max-width: $tablet) {
+                margin-bottom: toRem(32);
+            }
+            @media (max-width: $mobile) {
+                margin-bottom: toRem(11);
+            }
+        }
+    }
+
+    // .location__body
+
+    &__body {
+        font-family: "Inter", sans-serif;
+        padding: toRem(24);
+        display: flex;
+
+        gap: toRem(40);
+        @media (max-width: toRem(991.98)) {
+            column-gap: toRem(20);
+        }
+        @media (max-width: $tablet) {
+            flex-direction: column;
+        }
+    }
+
+    // .location__map
+
+    &__map {
+        border-radius: toRem(24);
+        flex-shrink: 1;
+        flex-grow: 0.2;
+        flex-basis: toPercent(440, calc($maxWidthContainer - 48));
+        min-height: toRem(391);
+        @media (max-width: $smallMobile) {
+            min-height: toRem(294);
+        }
+    }
+
+    // .location__info
+
+    &__info {
+        flex: 1 1 toPercent(541, calc($maxWidthContainer - 48));
+        flex-grow: 1;
+        flex-shrink: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: toRem(40);
+        line-height: 1.44;
+        letter-spacing: toRem(-0.16);
+        color: $darkColor;
+        @media (max-width: toRem(991.98)) {
+            column-gap: toRem(20);
+        }
+    }
+
+    // .location__address
+
+    &__address {
+        flex: 0 0.5 toPercent(219, 541);
+        padding-inline-end: toRem(20);
+        text-wrap: balance;
+        & > * {
+            margin-bottom: toRem(12);
+        }
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+        @media (max-width: $tablet) {
+            flex-grow: 1;
+            min-width: toRem(219);
+        }
+    }
+    //location__address-details
+    &__address-details {
+        margin-bottom: toRem(28);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    // .location__address-title
+
+    &__address-title,
+    &__schedule-title {
+        font-size: toRem(22);
+        font-weight: 700;
+        line-height: 1.4;
+        letter-spacing: toRem(-0.792);
+    }
+
+    // .location__phone
+
+    &__phone,
+    &__mail {
+        @include hover-underline($greenColor);
+        transition: color 0.4s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $greenColor;
+            }
+        }
+    }
+
+    // .location__direction
+
+    &__direction {
+        font-weight: 600;
+        color: $greenColor;
+        text-decoration: underline;
+    }
+
+    // .location__schedule
+
+    &__schedule {
+        @media (max-width: $tablet) {
+            min-width: toRem(282);
+        }
+    }
+
+    // .location__schedule-title
+
+    &__schedule-title {
+        &:not(:last-child) {
+            margin-bottom: toRem(12);
+        }
+    }
+
+    // .location__schedule-list
+
+    &__schedule-list {
+        & > *:not(:last-child) {
+            margin-bottom: toRem(12);
+        }
+    }
+
+    // .location__schedule-item
+
+    &__schedule-item {
+        display: flex;
+        gap: toRem(20);
+    }
+
+    // .location__schedule-day
+
+    &__schedule-day {
+        flex: 0 0 toRem(87);
+    }
+
+    // .location__schedule-time
+
+    &__schedule-time {
+        & > :nth-child(2) {
+            display: block;
         }
     }
 }

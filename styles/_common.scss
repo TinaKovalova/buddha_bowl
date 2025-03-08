@@ -32,6 +32,7 @@
         font-size: toRem(64);
         font-weight: 700;
         text-wrap: balance;
+        color: $darkColor;
         @media (max-width: $smallMobile) {
             font-size: toRem(38);
         }
@@ -104,19 +105,14 @@
     &__title {
         font-size: toRem(26);
         line-height: 1.39;
-        background: linear-gradient(180deg, #000 0%, #1a4d2e 100%);
-        background-clip: text;
+        color: $darkColor;
         @include hover-underline($greenColor);
         @media (min-width: $smallMobile) and (max-width: $tablet) {
             font-size: toRem(19);
         }
     }
 
-    // .product-card__title-link
-
-    &__title-link {
-    }
-
+    
     // .product-card__text
 
     &__text {
@@ -142,6 +138,4 @@
             border-radius: toRem(7);
         }
     }
-}
-.button {
 }
