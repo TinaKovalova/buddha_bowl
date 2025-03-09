@@ -158,6 +158,10 @@
         font-family: "Inter", sans-serif;
         padding: toRem(24);
         display: flex;
+        border-radius: toRem(24);
+        box-shadow:
+            0 toRem(16) toRem(32) toRem(-4) rgba($color: #0c0c0d, $alpha: 0.1),
+            0 toRem(4) toRem(4) toRem(-4) rgba($color: #0c0c0d, $alpha: 0.1);
 
         gap: toRem(40);
         @media (max-width: toRem(991.98)) {
@@ -302,87 +306,6 @@
 // MENU page---------------------------------------------------
 
 .menu {
-    // .menu__top
-
-    &__top {
-        background-color: $greenColor;
-    }
-    // .menu__container-min
-
-    &__top &__container-min {
-        padding-block: toRem(48);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: toRem(14) toRem(9);
-        @media (max-width: toRem(991.98)) {
-            flex-direction: column;
-        }
-    }
-    // .menu__image-wrapper
-
-    &__image-wrapper {
-        border-radius: toRem(24);
-        overflow: hidden;
-        max-width: toRem(507);
-        max-height: toRem(507);
-
-        @media (max-width: toRem(991.98)) {
-            max-width: toRem(344);
-            max-height: toRem(344);
-        }
-        @media (max-width: toRem(429.98)) {
-            width: toRem(270);
-            height: toRem(270);
-        }
-    }
-    // .menu__image
-
-    &__image {
-        min-width: 100%;
-        min-height: 100%;
-        object-fit: cover;
-        aspect-ratio: 507 / 507;
-    }
-
-    // .menu__header
-
-    &__header {
-        max-width: toPercent(556, $maxWidthContainer);
-        color: $whiteColor;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        row-gap: toRem(16);
-        @media (max-width: toRem(991.98)) {
-            max-width: toRem(682);
-        }
-        // .header-block__title
-
-        & .header-block__title {
-            color: inherit;
-
-            @media (min-width: $tablet) {
-                font-size: toRem(90);
-                line-height: 1;
-            }
-        }
-
-        // .header-block__text
-
-        & .header-block__text {
-            font-family: "DM Sans", sans-serif;
-            font-size: toRem(26);
-            line-height: 1.38;
-            max-width: toRem(632);
-            @media (max-width: $smallMobile) {
-                font-size: toRem(16);
-                line-height: 1.438;
-                letter-spacing: toRem(-0.16);
-            }
-        }
-    }
-
     // .menu__bottom
 
     &__bottom {
@@ -449,5 +372,25 @@
         width: 0;
         height: 0;
         visibility: hidden;
+    }
+}
+// ABOUT page--------------------------------------------------
+
+.about {
+    // .about__header
+
+    & .section-top__header {
+        & .header-block__title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+        & .header-block__text > p + p:last-child {
+            margin-top: toRem(44);
+            @media (max-width: $mobile) {
+                margin-top: toRem(29);
+            }
+        }
     }
 }

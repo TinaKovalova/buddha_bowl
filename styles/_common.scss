@@ -155,3 +155,97 @@
         }
     }
 }
+
+.section-top {
+    background-color: $greenColor;
+    // .section-top__container-min
+
+    &__container-min {
+        padding-block: toRem(48);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: toRem(14) toRem(9);
+        @media (max-width: toRem(991.98)) {
+            flex-direction: column;
+        }
+    }
+
+    // .section-top__image-wrapper
+
+    &__image-wrapper {
+        border-radius: toRem(24);
+        overflow: hidden;
+        width: toRem(507);
+        height: toRem(507);
+        position: relative;
+
+        @media (max-width: toRem(991.98)) {
+            width: toRem(344);
+            height: toRem(344);
+        }
+        @media (max-width: toRem(429.98)) {
+            width: toRem(270);
+            height: toRem(270);
+        }
+    }
+
+    // .section-top__image
+
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        object-position: center;
+        aspect-ratio: 507 / 507;
+
+        @media (max-width: toRem(991.98)) {
+            aspect-ratio: 344 / 344;
+        }
+        @media (max-width: toRem(429.98)) {
+            aspect-ratio: 270 / 270;
+        }
+    }
+
+    // .section-top__header
+
+    &__header {
+        max-width: toPercent(556, $maxWidthContainer);
+        color: $whiteColor;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: toRem(16);
+        @media (max-width: toRem(991.98)) {
+            max-width: toRem(682);
+        }
+        // .header-block__title
+
+        & .header-block__title {
+            color: inherit;
+
+            @media (min-width: $tablet) {
+                font-size: toRem(90);
+                line-height: 1;
+                padding-inline: toRem(10);
+            }
+        }
+
+        // .header-block__text
+
+        & .header-block__text {
+            font-family: "DM Sans", sans-serif;
+            font-size: toRem(26);
+            line-height: 1.38;
+            max-width: toRem(632);
+            @media (max-width: $smallMobile) {
+                font-size: toRem(16);
+                line-height: 1.438;
+                letter-spacing: toRem(-0.16);
+            }
+        }
+    }
+}
